@@ -1,11 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.23107.0
+# Visual Studio 15
+VisualStudioVersion = 15.0.27004.2009
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DragAndDrop", "DragAndDrop\DragAndDrop.csproj", "{B257CF65-A0F2-4CEE-933B-AB7ED99F121C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NumbersOnly", "NumbersOnly\NumbersOnly.csproj", "{D72C1FC1-AB7B-4634-9274-C97BA2B28D91}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DragAndDropWithAdorner", "DragAndDropWithAdorner\DragAndDropWithAdorner.csproj", "{3EDE0070-A6BB-40FB-8871-A5C82657B78D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,8 +23,15 @@ Global
 		{D72C1FC1-AB7B-4634-9274-C97BA2B28D91}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D72C1FC1-AB7B-4634-9274-C97BA2B28D91}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D72C1FC1-AB7B-4634-9274-C97BA2B28D91}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3EDE0070-A6BB-40FB-8871-A5C82657B78D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3EDE0070-A6BB-40FB-8871-A5C82657B78D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3EDE0070-A6BB-40FB-8871-A5C82657B78D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3EDE0070-A6BB-40FB-8871-A5C82657B78D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {11D9AE95-D744-468A-9128-3C0479F7B2AC}
 	EndGlobalSection
 EndGlobal
