@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Diagnostics;
 using System.Drawing;
-using System.Threading.Tasks;
-using System.Windows.Input;
 using AsciiArtGenerator.Commands;
 
 namespace AsciiArtGenerator.ViewModels
@@ -82,21 +79,7 @@ namespace AsciiArtGenerator.ViewModels
             CalcCommand = new RelayCommand(CreateAsciiArt, () => CanCreate);
             ChooseFileCommand = new RelayCommand(ChooseFile);
         }
-
-        public event EventHandler AsciiArtCreated;
-
-        public void CreateAsciiArtInBgThread()
-        {
-            // your turn...
-
-            Task.Run(() =>
-            {
-                CreateAsciiArt(); 
-
-                AsciiArtCreated?.Invoke(this, new EventArgs());
-            });
-        }
-
+        
 
         /// <summary>
         /// Erzeugt ein ASCII Art aus dem Bild, das der Property ImagePath
