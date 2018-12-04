@@ -64,10 +64,8 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Commands\RelayCommand.cs" />
     <Compile Include="Converters\InvertedBoolToVisibilityConverter.cs" />
-    <Compile Include="ViewModels\AsciiGeneratorViewModel.cs" />
-    <Compile Include="ViewModels\BindableBase.cs" />
+    <Compile Include="Util\WpfPlatformSupport.cs" />
     <Page Include="Views\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

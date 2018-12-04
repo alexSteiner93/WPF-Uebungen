@@ -1,7 +1,6 @@
 ﻿using System.ComponentModel;
-using System.Runtime.CompilerServices;
 
-namespace AsciiGenerator.UI.ViewModels
+namespace AsciiArtGenerator.ViewModels
 {
     public abstract class BindableBase : INotifyPropertyChanged
     {

@@ -5,7 +5,8 @@ using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
-using AsciiGenerator.UI.ViewModels;
+using AsciiArtGenerator.ViewModels;
+using AsciiGenerator.UI.Util;
 
 namespace AsciiGenerator.UI
 {
@@ -14,12 +15,20 @@ namespace AsciiGenerator.UI
     /// </summary>
     public partial class App : Application
     {
+
+        public WpfPlatformSupport PlatformSupport { get; set; } = new WpfPlatformSupport();
+
         protected override void OnStartup(StartupEventArgs e)
         {
             base.OnStartup(e);
 
-            // hier den Glue Code ergänzen:
-            // ...
+            // hier den Glue Code ergänzen (DataContext von MainWindow,
+            // sowie ViewModels etc.):
+            // ...          
+
+            // ... und nicht vergessen, im App.xaml die Property
+            // StartupUri zu entfernen, falls das MainWindow hier
+            // erzeugt und angezeigt wird (wie z.B. in Ü4).
         }
     }
 }

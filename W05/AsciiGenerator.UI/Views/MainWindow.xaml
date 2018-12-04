@@ -53,7 +53,7 @@
             
             <Label Grid.Row="0" Grid.Column="0">Bild:</Label>
             <TextBox Grid.Row="0" Grid.Column="1" />
-            <Button Grid.Row="0" Grid.Column="2" Content="..."></Button>
+            <Button Grid.Row="0" Grid.Column="2" Content="..." />
 
             <Label Grid.Row="1" Grid.Column="0">Breite:</Label>
             <StackPanel Orientation="Horizontal" Grid.Row="1" Grid.Column="1">
@@ -68,7 +68,7 @@
                 <TextBlock Width="20"/>
                 <Label>Schriftgrösse:</Label>
                 <Label Content="12" />
-                <Slider HorizontalAlignment="Stretch" Minimum="2" Maximum="20" TickFrequency="1"></Slider>
+                <Slider HorizontalAlignment="Stretch" VerticalAlignment="Center" Minimum="2" Maximum="20" TickFrequency="1" IsSnapToTickEnabled="True"></Slider>
             </DockPanel>
         </Grid>
         
