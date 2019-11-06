@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29503.13
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assignment1.Mvvm.Util", "Assignment1.Mvvm.Util\Assignment1.Mvvm.Util.csproj", "{C284DADB-D4AA-46A6-990E-82F599553AEE}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assignment1.Mvvm.App", "Assignment1.Mvvm.App\Assignment1.Mvvm.App.csproj", "{98660133-A941-4F4B-BC96-D4628886A32C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assignment1.Mvvm.Util", "Assignment1.Mvvm.Util\Assignment1.Mvvm.Util.csproj", "{C284DADB-D4AA-46A6-990E-82F599553AEE}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assignment1.Mvvm.Core", "Assignment1.Mvvm.Core\Assignment1.Mvvm.Core.csproj", "{628A5BDC-9924-4E4A-A84F-D8DFDBC08D04}"
 EndProject
