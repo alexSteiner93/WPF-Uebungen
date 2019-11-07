@@ -29,10 +29,15 @@ namespace Assignment1.Mvvm.App
             // leider nicht korrekt aktualisieren (Rückschritt gegenüber
             // Aufgabe 3) 
 
-            // wenn wir jedoch oben die Klasse BindableGreetingVm verwenden,
-            // aktualisiert sich das ui automa(g)isch und zeigt die im 
-            // ViewModel geänderten Werte sofort korrekt an, ohne dass
-            // wir etwas zusätzliches Vorsehen müssten
+            // wenn wir jedoch weiter oben die Klasse BindableGreetingVm
+            // anstelle von GreetingVm verwenden, aktualisiert sich das UI
+            // dank den Binding-Angaben im XAML Code und der Verdrahtung
+            // mittels INotifyPropertyChanged automa(g)isch und zeigt die
+            // im ViewModel geänderten Werte sofort (nach Verlassen der
+            // TextBox) korrekt an, ohne dass wir überhaupt erst auf den
+            // Button klicken müssen. Somit können wir die Zuweisung
+            // im Event Handler resp. sogar den ganzen Event Handler
+            // entfernen.
         }
     }
 }
