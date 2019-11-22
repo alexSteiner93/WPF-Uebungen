@@ -1,7 +1,6 @@
 ﻿using System.Windows;
-using System.Windows.Input;
 
-namespace ModernUi
+namespace AutoUi
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml

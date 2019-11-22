@@ -1,7 +1,7 @@
-﻿<Window x:Class="ModernUi.MainWindow"
+﻿<Window x:Class="AutoUi.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:local="clr-namespace:ModernUi"
+        xmlns:local="clr-namespace:AutoUi"
         FontFamily="Segoe UI"
         ResizeMode="CanResizeWithGrip"
         Title="AutoUI" Height="350" Width="525" MinHeight="240" MinWidth="320">
