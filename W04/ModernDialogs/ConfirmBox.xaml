@@ -1,0 +1,97 @@
+﻿<Window x:Class="ModernDialogs.ConfirmBox"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="Bestätigung erforderlich" Height="180" Width="300">
+
+    <!-- Ressourcen (Styles etc.) -->
+    <Window.Resources>
+        <!-- benannten Style als Basis benutzen -->
+        <Style x:Key="DefaultButtonStyle" TargetType="Button">
+            <Setter Property="BorderThickness" Value="4" />
+            <Setter Property="BorderBrush" Value="Transparent" />
+            <Setter Property="Background" Value="#aaa" />
+            <Setter Property="Foreground" Value="White" />
+            <Setter Property="FontFamily" Value="Segoe UI" />
+            <Setter Property="Margin" Value="2" />
+            <Setter Property="Padding" Value="10 5 10 5" />
+            <Setter Property="FontSize" Value="13" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <!-- 
+                        ControlTemplate der Buttons überschreiben, damit wir die
+                        nervigen Default-Mouse-Over-Effekte etc. los werden
+                    -->
+                    <ControlTemplate TargetType="Button">
+                        <Border BorderBrush="{TemplateBinding BorderBrush}" 
+                                BorderThickness="{TemplateBinding BorderThickness}">
+                            <Grid Background="{TemplateBinding Background}" >
+                                <ContentPresenter Content="{TemplateBinding Content}" Margin="{TemplateBinding Padding}" VerticalAlignment="Center" />
+                            </Grid>
+                        </Border>
+                        <!-- 
+                            Wir hätten die Triggers auch hier auf Ebene ControlTemplate definieren können:
+                            (so wird das beispielsweise in den Windows-Theme-Defaults von WPF gemacht)
+                        -->
+                        <!--
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="BorderBrush" Value="#80bbbbbb" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                        -->
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+
+            <!-- 
+                Hier definieren wir die Triggers auf Ebene Style
+            -->
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="BorderBrush" Value="#80bbbbbb" />
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+        <!-- Den obigen benannten Style erben und auf alle Buttons anwenden -->
+        <Style TargetType="Button" BasedOn="{StaticResource DefaultButtonStyle}" />
+        
+        <!-- Einen primären Style definieren, welcher eine Akzentfarbe verwendet -->
+        <Style x:Key="PrimaryButtonStyle" TargetType="Button" BasedOn="{StaticResource DefaultButtonStyle}">
+            <Setter Property="Background" Value="#0066a6" />
+        </Style>
+
+        <!-- für den Help Button einen zusätzlichen abgeleiteten und benannten Style definieren -->
+        <Style x:Key="MyHelpButtonStyle" TargetType="Button" BasedOn="{StaticResource DefaultButtonStyle}">
+            <Setter Property="Foreground" Value="Gray" />
+            <Setter Property="Background" Value="Transparent" />
+        </Style>
+    </Window.Resources>
+    
+    <!-- Layout Code -->
+    <DockPanel>
+         <StackPanel DockPanel.Dock="Bottom" Background="#eee">
+             <DockPanel Margin="10" LastChildFill="False">
+                 <Button Style="{StaticResource MyHelpButtonStyle}" DockPanel.Dock="Left">Hilfe</Button>
+                 <Button DockPanel.Dock="Right" Click="Cancel_Click">Abbrechen</Button>
+                 <Button Style="{StaticResource PrimaryButtonStyle}" Click="Ok_Click"  DockPanel.Dock="Right">Speichern</Button>
+             </DockPanel>
+         </StackPanel>
+
+        <DockPanel>
+            <Grid DockPanel.Dock="Left" Width="64" Height="64" VerticalAlignment="Top" Margin="0 10">
+                <Polygon Points="8,52 56,52 32,8" Fill="#bbb" />
+                <!--<Polygon Points="16,48 48,48 32,18" Fill="White" />-->
+                <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White" FontSize="24">!</TextBlock>
+            </Grid>
+            <StackPanel Margin="10 0">
+
+                <TextBlock FontWeight="Bold" Margin="0 10 0 10">Warnung</TextBlock>
+                <!-- Sicherstellen, dass längerer Text zeilenweise umbricht: TextWrapping einschalten! -->
+                <TextBlock TextWrapping="Wrap">Sollen die Änderungen gespeichert werden?</TextBlock>
+            </StackPanel>
+        </DockPanel>
+    </DockPanel>
+</Window>
