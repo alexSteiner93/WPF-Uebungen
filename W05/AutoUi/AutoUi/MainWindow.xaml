@@ -1,0 +1,16 @@
+﻿<Window x:Class="AutoUi.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:AutoUi"
+        FontFamily="Segoe UI"
+        ResizeMode="CanResizeWithGrip"
+        Title="AutoUI" Height="350" Width="525" MinHeight="240" MinWidth="320">
+    
+    <Grid>
+        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+            <Button Content="AutoListWindow öffnen" Click="AutoListWindow_Click" />
+            <Button Content="AutoWindow öffnen" Click="AutoWindow_Click" />
+            <Button Content="CustomerWindow öffnen" Click="CustomerWindow_Click" />
+        </StackPanel>
+    </Grid>
+</Window>
