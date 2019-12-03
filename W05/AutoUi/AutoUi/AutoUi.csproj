@@ -57,6 +57,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Commands\RelayCommand.cs" />
+    <Compile Include="ViewModels\ConfirmBoxVm.cs" />
     <Compile Include="Views\AutoListWindow.xaml.cs">
       <DependentUpon>AutoListWindow.xaml</DependentUpon>
     </Compile>
@@ -68,6 +69,10 @@
     <Compile Include="ViewModels\AutoListVm.cs" />
     <Compile Include="ViewModels\BindableBase.cs" />
     <Compile Include="ViewModels\CustomerVm.cs" />
+    <Page Include="Styles\ConfirmBoxStyles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Views\AutoListWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -84,6 +89,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\ConfirmBox.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Views\CustomerWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -99,6 +108,9 @@
     <Compile Include="ViewModels\AutoVm.cs" />
     <Compile Include="Views\AutoWindow.xaml.cs">
       <DependentUpon>AutoWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ConfirmBox.xaml.cs">
+      <DependentUpon>ConfirmBox.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\CustomerWindow.xaml.cs">
       <DependentUpon>CustomerWindow.xaml</DependentUpon>
