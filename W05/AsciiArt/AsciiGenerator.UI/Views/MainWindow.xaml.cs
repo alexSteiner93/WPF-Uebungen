@@ -10,6 +10,7 @@ namespace AsciiGenerator.UI.Views
         public MainWindow()
         {
             InitializeComponent();
+
         }
     }
 }

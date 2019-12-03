@@ -1,4 +1,4 @@
-﻿using System.Windows;
+﻿using AsciiGenerator.UI.Views;
 using Microsoft.Win32;
 
 namespace AsciiGenerator.UI.Util
@@ -33,10 +33,17 @@ namespace AsciiGenerator.UI.Util
         /// <summary>
         /// Zeigt eine Fehlermeldung in einer Message box an
         /// </summary>
-        /// <param name="msg"></param>
-        public void ShowError(string msg)
+        /// <param name="title">Der Titel</param>
+        /// <param name="msg">Die Nachricht</param>
+        public void ShowError(string title, string msg)
         {
-            MessageBox.Show(msg, "Fehler", MessageBoxButton.OK, MessageBoxImage.Error);
+            ConfirmBox.Display("Fehler", title, msg);
+
+            // WPF stellt folgende Out-of-the-box-Methode zur Verfügung, 
+            // dort haben wir aber keine Styling-Möglichkeiten, weshalb
+            // wir die eigene Lösung bevorzugen.
+            //
+            // MessageBox.Show(msg, "Fehler", MessageBoxButton.OK, MessageBoxImage.Error);
         }
     }
 }

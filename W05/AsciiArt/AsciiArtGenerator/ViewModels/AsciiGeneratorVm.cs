@@ -4,7 +4,7 @@ using AsciiArtGenerator.Commands;
 
 namespace AsciiArtGenerator.ViewModels
 {
-    public class AsciiGeneratorViewModel:BindableBase
+    public class AsciiGeneratorVm:BindableBase
     {
         // Kommando, das ein ASCII Art erzeugt
         public RelayCommand CalcCommand { get; set; }
@@ -60,17 +60,17 @@ namespace AsciiArtGenerator.ViewModels
 
         /// <summary>
         /// kann von aussen gesetzt werden, um die Logik für das
-        /// Abfragen eines Dateipfads abzufragen
+        /// Abfragen eines Dateipfads aufzurufen (vgl. WpfPlatformSupport im Plattform-Projekt)
         /// </summary>
         public Func<string> OnChooseFile { get; set; }
 
         /// <summary>
         /// kann von aussen gesetzt werden, um die Logik für die
-        /// Anzeige eines Fehlers zu implementieren
+        /// Anzeige eines Fehlers zu implementieren (vgl. WpfPlatformSupport im Plattform-Projekt)
         /// </summary>
-        public Action<string> OnShowError { get; set; }
+        public Action<string, string> OnShowError { get; set; }
 
-        public AsciiGeneratorViewModel()
+        public AsciiGeneratorVm()
         {
             CanCreate = true;
             LineWidth = 80;
@@ -89,13 +89,13 @@ namespace AsciiArtGenerator.ViewModels
         {
             if (string.IsNullOrEmpty(ImagePath))
             {
-                ShowError("Kann leider nichts berechnen: Keine Quelldatei angegeben");
+                ShowError("Quelldatei fehlt", "Kann leider nichts berechnen: Keine Quelldatei angegeben");
                 return;
             }
 
             if (!System.IO.File.Exists(ImagePath))
             {
-                ShowError("Kann leider nichts berechnen: Quelldatei nicht gefunden");
+                ShowError("Quelldatei nicht verfügbar", "Kann leider nichts berechnen: Quelldatei nicht gefunden");
                 return;
             }
 
@@ -113,7 +113,7 @@ namespace AsciiArtGenerator.ViewModels
             }
             catch (Exception e)
             {
-                ShowError($"Berechnung fehlgeschlagen. Ursache: {e.Message}");
+                ShowError("Es ist ein Fehler aufgetreten", $"Berechnung fehlgeschlagen. Ursache: {e.Message}");
             }
 
             CanCreate = true;
@@ -149,13 +149,14 @@ namespace AsciiArtGenerator.ViewModels
         /// die Action von aussen setzen und z.B. eine
         /// MessageBox anzeigen)
         /// </summary>
+        /// <param name="title">Der Titel</param>
         /// <param name="msg">Die Fehlermeldung</param>
-        private void ShowError(string msg)
+        private void ShowError(string title, string msg)
         {
             if (OnShowError == null)
                 throw new NotImplementedException();
 
-            OnShowError(msg);
+            OnShowError(title, msg);
         }
     }
 }
