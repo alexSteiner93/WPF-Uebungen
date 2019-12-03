@@ -5,7 +5,6 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AsciiGenerator.UI"
         xmlns:fa="http://schemas.fontawesome.io/icons/"
-        xmlns:converters="clr-namespace:AsciiGenerator.UI.Converters"
         mc:Ignorable="d"
         FontSize="16"
         Icon="/HSR-Icon.ico"
@@ -13,28 +12,7 @@
         ResizeMode="CanResizeWithGrip"
         Title="ASCII Art Generator" Height="480" Width="650" MinHeight="320" MinWidth="480">
     <Window.Resources>
-        <Style TargetType="Slider">
-            <Setter Property="Margin" Value="4"></Setter>
-            <Setter Property="Padding" Value="4"></Setter>
-        </Style>
-        <Style TargetType="Label">
-            <Setter Property="Margin" Value="4"></Setter>
-            <Setter Property="Padding" Value="4"></Setter>
-        </Style>
-        <Style TargetType="TextBox">
-            <Setter Property="Margin" Value="4"></Setter>
-            <Setter Property="Padding" Value="4"></Setter>
-        </Style>
-        <Style TargetType="Button">
-            <Setter Property="Margin" Value="4"></Setter>
-            <Setter Property="Padding" Value="10 4 10 4"></Setter>
-        </Style>
-        <Style x:Key="AsciiArtStyle" TargetType="TextBox">
-            <Setter Property="Margin" Value="0"></Setter>
-            <Setter Property="FontFamily" Value="Courier New"></Setter>
-        </Style>
-
-        <converters:InvertedBoolToVisibilityConverter x:Key="InvertedBoolConverter" />
+        <ResourceDictionary Source="../Styles/MainWindowStyles.xaml" />
     </Window.Resources>
     
     
