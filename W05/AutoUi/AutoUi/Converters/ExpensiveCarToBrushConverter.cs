@@ -3,7 +3,7 @@ using System.Globalization;
 using System.Windows.Data;
 using System.Windows.Media;
 
-namespace AutoUi
+namespace AutoUi.Converters
 {
     public class ExpensiveCarToBrushConverter : IValueConverter
     {

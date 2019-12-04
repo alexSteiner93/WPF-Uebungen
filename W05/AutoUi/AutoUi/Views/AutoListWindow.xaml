@@ -5,12 +5,13 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AutoUi"
         xmlns:vm="clr-namespace:AutoUi.ViewModels"
+        xmlns:converters="clr-namespace:AutoUi.Converters"
         mc:Ignorable="d"
         d:DataContext="{d:DesignInstance vm:AutoListVm}"
         Title="AutoListWindow" Height="450" Width="800">
     <Window.Resources>
         <BooleanToVisibilityConverter x:Key="MyBooleanToVisibilityConverter" />
-        <local:ExpensiveCarToBrushConverter x:Key="MyExpensiveCarToBrushConverter" />
+        <converters:ExpensiveCarToBrushConverter x:Key="MyExpensiveCarToBrushConverter" />
     </Window.Resources>
 
 
