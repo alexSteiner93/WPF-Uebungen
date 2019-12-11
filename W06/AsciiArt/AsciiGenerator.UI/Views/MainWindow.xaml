@@ -40,9 +40,7 @@
 
             <Label Grid.Row="2" Grid.Column="0">ASCII Art:</Label>
             <DockPanel Grid.Row="2" Grid.Column="1">
-                <Button HorizontalAlignment="Left" 
-                        IsEnabled="{Binding CanCreate}"
-                        Command="{Binding CalcCommand}">
+                <Button HorizontalAlignment="Left" Command="{Binding CalcCommand}">
                     Berechnen
                 </Button>
                 <!-- Spacer element -->
