@@ -61,7 +61,7 @@
     <Compile Include="Views\AutoListWindow.xaml.cs">
       <DependentUpon>AutoListWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ExpensiveCarToBrushConverter.cs" />
+    <Compile Include="Converters\ExpensiveCarToBrushConverter.cs" />
     <Compile Include="Services\MockDataProvider.cs" />
     <Compile Include="Services\PoorMansObjectCloner.cs" />
     <Compile Include="Util\EnumExtensions.cs" />
