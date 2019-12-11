@@ -52,15 +52,7 @@ namespace AsciiArtGenerator.ViewModels
         public bool CanCreate
         {
             get { return _canCreate; }
-            set
-            {
-                SetProperty(ref _canCreate, value, nameof(CanCreate));
-
-                // nicht vergessen, das UI über Änderungen von
-                // CanExecute des CalcCommands zu informieren!
-                // -> Achtung: CalcCommand kann beim Laden noch null sein!
-                CalcCommand?.RaiseCanExecuteChanged();
-            }
+            set { SetProperty(ref _canCreate, value, nameof(CanCreate)); }
         }
 
         /// <summary>
@@ -81,7 +73,7 @@ namespace AsciiArtGenerator.ViewModels
             LineWidth = 80;
             FontSize = 12;
 
-            CalcCommand = new RelayCommand(CreateAsciiArt, () => CanCreate);
+            CalcCommand = new RelayCommand(CreateAsciiArt);
             ChooseFileCommand = new RelayCommand(ChooseFile);
         }
 
